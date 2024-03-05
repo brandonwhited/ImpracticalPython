@@ -11,3 +11,4 @@ Final_Product = float(((Total * Adapted_Tip) + Total) / Split_Between)
 
 
 print(f"Each person shall pay {round(Final_Product, 2)} dollars")
+
