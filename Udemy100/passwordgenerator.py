@@ -17,11 +17,16 @@ num_symbols = len(symbols)
 
 # Generate the password
 
+for char in range(0, )
+
 password = ''
 for _ in range(nr_letters):
     # Generate a random letter and add it to the password
     random_letter = letters[random.randint(0, num_letters - 1)]
     password += random_letter
+    
+# for _ in range(1, nr_letters +1)
+    password+= random.choice(letters)
 
 for _ in range(nr_symbols):
     # Generate a random symbol and add it to the password
@@ -38,6 +43,11 @@ password_list = list(password)
 random.shuffle(password_list)
 shuffled_password = ''.join(password_list)
 
+#password = ""
+#ALT
+#for char in password_list
+#    pasword += char
+    
 print(f"Your password is: {shuffled_password}")  
 
 
