@@ -1,36 +1,29 @@
-#Step 1 
-import random
+mport random
 word_list = ["aardvark", "baboon", "camel"]
-
 chosen_word = random.choice(word_list)
-chosen_letters = list(chosen_word)
+word_length = len(chosen_word)
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
-#TODO-1: - Create an empty List called display.
-#For each letter in the chosen_word, add a "_" to 'display'.
-#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
-
+#Create blanks
 display = []
-for _ in chosen_letters:
-    display.append("_")
-# OR display += "_"
-# OR display = ["_" for _ in chosen_letters]
-# OR for _ in range(len()chosen_word): display += "_"
+for _ in range(word_length):
+    display += "_"
 
-#TODO-2: - Loop through each position in the chosen_word;
+#TODO-1: - Use a while loop to let the user guess again. 
+# The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). 
+# Then you can tell the user they've won.
+while "_" in display:
+    guess = input("Guess a letter: ").lower()
 
-guess = input("Guess a letter: ").lower()
+    #Check guessed letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        if letter == guess:
+            display[position] = letter
 
-for i, letter in enumerate(chosen_letters):
-    if letter == guess:
-        display[i] = guess
-        
-# OR for position in range(len(chosen_word)):
-#       letter = chosen_word[position]
-#       if letter == guess:
-#           display[position] = letter
+    print(display)
 
-
-print(display)
+print("You've won!")
